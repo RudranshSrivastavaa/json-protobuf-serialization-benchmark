@@ -23,30 +23,22 @@ format and its Go implementation rather than different payloads.
 For the tested `Order` payload 
 
 
-  Operation                    JSON           Protobuf           Observed
-                                                               difference
+  Operation                    JSON           Protobuf             Observed difference 
 
-  Marshal                2289 ns/op         2044 ns/op   Protobuf \~12.0%
-                                                               lower time
+  Marshal                2289 ns/op         2044 ns/op             Protobuf \~12.0% lower time
 
-  Unmarshal              9605 ns/op         2717 ns/op   Protobuf \~3.53×
-                                                               lower time
+  Unmarshal              9605 ns/op         2717 ns/op             Protobuf \~3.53×lower time
 
-  Marshal memory          1008 B/op           704 B/op   Protobuf \~30.2%
-                                                              fewer bytes
+  Marshal memory          1008 B/op           704 B/op             Protobuf \~30.2% fewer bytes
+  
+  Marshal allocations     12 allocs/op       21 allocs/op          JSON has fewer allocations
 
-  Marshal              12 allocs/op       21 allocs/op     JSON has fewer
-  allocations                                                 allocations
+  Unmarshal  memory       1568 B/op          1592 B/op             Nearly the same
+                                              
+  Unmarshal  allocations   43 allocs/op       54 allocs/op         JSON has fewer allocations
 
-  Unmarshal               1568 B/op          1592 B/op    Nearly the same
-  memory                                               
+  Payload size            616 bytes          372 bytes             Protobuf 39.6% smaller
 
-  Unmarshal            43 allocs/op       54 allocs/op     JSON has fewer
-  allocations                                                 allocations
-
-  Payload size            616 bytes          372 bytes     Protobuf 39.6%
-                                                                  smaller
-  -----------------------------------------------------------------------
 
 The important point is that **fewer allocations does not automatically
 mean lower latency**. In this benchmark, Protobuf unmarshal performs
