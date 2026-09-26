@@ -370,17 +370,15 @@ conclusions about performance.
 
 ### Screenshot --- JSON unmarshal
 
-```{=html}
-<!-- SCREENSHOT 3: Paste the JSON unmarshal benchmark screenshot here -->
-```
-![JSON unmarshal benchmark](PASTE_SCREENSHOT_3_LINK_HERE)
+<p align="center">
+  <img src="screenshot/benchmark-json-unmarshal.png" alt="image" width="1200"/>
+</p>
 
 ### Screenshot --- Protobuf unmarshal
 
-```{=html}
-<!-- SCREENSHOT 4: Paste the Protobuf unmarshal benchmark screenshot here -->
-```
-![Protobuf unmarshal benchmark](PASTE_SCREENSHOT_4_LINK_HERE)
+<p align="center">
+  <img src="screenshot/benchmark-proto-unmarshal.png" alt="image" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
@@ -463,10 +461,9 @@ Total samples: 1040ms
 
 ### Screenshot
 
-```{=html}
-<!-- SCREENSHOT 5: Paste the JSON CPU profile screenshot here -->
-```
-![JSON CPU profile](PASTE_SCREENSHOT_5_LINK_HERE)
+<p align="center">
+  <img src="screenshot/json-cpu-prof.png" alt="image" width="1200"/>
+</p>
 
 ### Reading `flat` vs `cum`
 
@@ -535,10 +532,9 @@ Total samples: 1190ms
 
 ### Screenshot
 
-```{=html}
-<!-- SCREENSHOT 6: Paste the Protobuf CPU profile screenshot here -->
-```
-![Protobuf CPU profile](PASTE_SCREENSHOT_6_LINK_HERE)
+<p align="center">
+  <img src="screenshot/proto-cpu-prof.png" alt="image" width="1200"/>
+</p>
 
 ### Important observation
 
