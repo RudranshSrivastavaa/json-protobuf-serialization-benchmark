@@ -609,17 +609,9 @@ The benchmark results themselves reported:
 
 ### Screenshot --- Protobuf memory benchmark
 
-```{=html}
-<!-- SCREENSHOT 7: Paste the Protobuf memory benchmark screenshot here -->
-```
-![Protobuf memory benchmark](PASTE_SCREENSHOT_7_LINK_HERE)
-
-### Screenshot --- JSON memory benchmark
-
-```{=html}
-<!-- SCREENSHOT 8: Paste the JSON memory benchmark screenshot here -->
-```
-![JSON memory benchmark](PASTE_SCREENSHOT_8_LINK_HERE)
+<p align="center">
+  <img src="screenshot/memory-alloc.png" alt="image" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
@@ -789,39 +781,6 @@ go test -run=^$ \
 
 ------------------------------------------------------------------------
 
-# 14. Benchmark environment
-
-The screenshots show:
-
-``` text
-OS:        darwin
-Architecture: arm64
-CPU:       Apple M2
-Package:   benchmark
-```
-
-The benchmark was run on:
-
-``` text
-Apple M2
-```
-
-The exact Go version is not captured in the provided benchmark output,
-so it is intentionally not listed here.
-
-For reproducible comparisons, always record:
-
--   Go version
--   CPU
--   OS
--   architecture
--   protobuf library version
--   benchmark payload
--   benchmark duration / count
--   compiler flags if customized
-
-------------------------------------------------------------------------
-
 # 15. Results at a glance
 
 ``` text
@@ -945,66 +904,3 @@ Real systems can have very different results depending on:
 
 ------------------------------------------------------------------------
 
-# 18. Key takeaway
-
-The useful lesson isn't simply:
-
-> "Protobuf is faster than JSON."
-
-The more useful lesson is:
-
-> **Measure the workload you actually care about.**
-
-In this benchmark, Protobuf produced a smaller wire payload and showed
-lower marshal latency and substantially lower unmarshal latency.
-
-But the allocation profile also shows why performance analysis needs
-multiple measurements:
-
-``` text
-latency
-+ bytes allocated
-+ allocation count
-+ CPU profile
-+ memory profile
-+ payload size
-```
-
-Looking at only one metric can hide important behavior.
-
-------------------------------------------------------------------------
-
-## Project structure
-
-A simplified structure of the benchmark:
-
-``` text
-serialize/
-├── benchmark/
-│   ├── benchmark_test.go
-│   ├── kv_bench_test.go
-│   ├── jsonmodel/
-│   │   └── ...
-│   ├── pb/
-│   │   └── order.pb.go
-│   └── kvpb/
-│       └── ...
-├── json.prof
-├── proto.prof
-└── mem.prof
-```
-
-The generated Protobuf code is produced from the `.proto` schema and
-contains the generated `Address`, `Item`, and `Order` message
-implementations. The generated `Order` includes the `metadata` map
-field. [Generated code](./pb/order.pb.go)
-
-------------------------------------------------------------------------
-
-## Notes
-
-These results are from a single benchmark environment and the
-screenshots provided with this experiment. For a stronger performance
-study, the next step would be to run repeated benchmarks with controlled
-payload sizes and compare distributions using tools such as `benchstat`,
-rather than relying on one run.
