@@ -1,6 +1,6 @@
 # JSON vs Protobuf Serialization Benchmark in Go
 
-A focused benchmark comparing **JSON** and **Protocol Buffers
+A benchmark comparison in **JSON** and **Protocol Buffers
 (Protobuf)** serialization in Go across:
 
 -   Marshal / encoding performance
@@ -20,12 +20,12 @@ format and its Go implementation rather than different payloads.
 
 ## TL;DR
 
-For the tested `Order` payload on an **Apple M2 / darwin / arm64**:
+For the tested `Order` payload 
 
-  -----------------------------------------------------------------------
+
   Operation                    JSON           Protobuf           Observed
                                                                difference
-  -------------- ------------------ ------------------ ------------------
+
   Marshal                2289 ns/op         2044 ns/op   Protobuf \~12.0%
                                                                lower time
 
