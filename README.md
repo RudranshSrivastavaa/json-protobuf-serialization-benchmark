@@ -210,10 +210,9 @@ Protobuf is 39.6% smaller than JSON
 
 ### Screenshot
 
-```{=html}
-<!-- SCREENSHOT 1: Paste the payload-size + wire-size-identical benchmark screenshot here -->
-```
-![Payload size benchmark](PASTE_SCREENSHOT_1_LINK_HERE)
+<p align="center">
+  <img src="screenshot/payload-size.png" alt="image" width="1200"/>
+</p>
 
 ### Interpretation
 
@@ -299,10 +298,13 @@ total bytes.
 
 ### Screenshot
 
-```{=html}
-<!-- SCREENSHOT 2: Paste the marshal benchmark result screenshot here -->
-```
-![Marshal benchmark](PASTE_SCREENSHOT_2_LINK_HERE)
+<p align="center">
+  <img src="screenshot/benchmark-json-marshal.png" alt="image" width="1200"/>
+</p>
+
+<p align="center">
+  <img src="screenshot/benchmark-proto-marshal.png" alt="image" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
