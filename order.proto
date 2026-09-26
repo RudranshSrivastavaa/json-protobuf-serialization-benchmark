@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package bench;
+
+option go_package = "benchmark/pb";
+
+message Address {
+  string street  = 1;
+  string city    = 2;
+  string zip     = 3;
+  string country = 4;
+}
+
+message Item {
+  string sku      = 1;
+  string name     = 2;
+  int32  quantity = 3;
+  double price    = 4;
+}
+
+message Order {
+  string  id               = 1;
+  string  customer_name    = 2;
+  string  customer_email   = 3;
+  int64   created_at       = 4;
+  Address shipping_address = 5;
+  repeated Item items      = 6;
+  double  total            = 7;
+  string  status           = 8;
+  map<string, string> metadata = 9;
+}

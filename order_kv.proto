@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package bench;
+
+option go_package = "benchmark/kvpb";
+
+// KeyValue is the explicit, message-based equivalent of a
+// map<string, string> entry. On the wire it is byte-for-byte
+// identical to one entry of a proto3 map field - maps are
+// specified as sugar over exactly this shape.
+message KeyValue {
+  string key   = 1;
+  string value = 2;
+}
+
+message OrderKV {
+  string id                    = 1;
+  repeated KeyValue metadata   = 9;
+}
